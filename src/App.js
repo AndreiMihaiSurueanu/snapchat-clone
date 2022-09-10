@@ -38,22 +38,31 @@ function App() {
 				{!user ? (
 					<Login />
 				) : (
-					<div className="app__body">
-						<Switch>
-							<Route path="/chats/view">
-								<ChatView />
-							</Route>
-							<Route path="/chats">
-								<Chats />
-							</Route>
-							<Route path="/preview">
-								<Preview />
-							</Route>
-							<Route exact path="/">
-								<WebcamCapture />
-							</Route>
-						</Switch>
-					</div>
+					<>
+						<img
+							className="app__logo"
+							src="https://scx2.b-cdn.net/gfx/news/hires/2017/snapchat.jpg"
+							alt="snapchat logo"
+						/>
+						<div className="app__body">
+							<div className="app__bodyBackground">
+								<Switch>
+									<Route path="/chats/view">
+										<ChatView />
+									</Route>
+									<Route path="/chats">
+										<Chats />
+									</Route>
+									<Route path="/preview">
+										<Preview />
+									</Route>
+									<Route exact path="/">
+										<WebcamCapture />
+									</Route>
+								</Switch>
+							</div>
+						</div>
+					</>
 				)}
 			</Router>
 		</div>

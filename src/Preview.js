@@ -15,11 +15,13 @@ import CropIcon from "@material-ui/icons/Crop";
 import TimerIcon from "@material-ui/icons/Timer";
 import SendIcon from "@material-ui/icons/Send";
 import "./Preview.css";
+import { selectUser } from "./features/appSlice";
 
 function Preview() {
 	const cameraImage = useSelector(selectCameraImage);
 	const history = useHistory();
 	const dispatch = useDispatch();
+	const user = useSelector(selectUser);
 
 	useEffect(() => {
 		if (!cameraImage) {
@@ -55,7 +57,7 @@ function Preview() {
 							imageUrl: url,
 							username: "PAPA React",
 							read: false,
-							// profilePic,
+							profilePic: user.profilePic,
 							timestamp:
 								firebase.firestore.FieldValue.serverTimestamp(),
 						});
