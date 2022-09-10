@@ -55,7 +55,7 @@ function Preview() {
 					.then((url) => {
 						db.collection("snaps").add({
 							imageUrl: url,
-							username: "PAPA React",
+							username: user.userName,
 							read: false,
 							profilePic: user.profilePic,
 							timestamp:
